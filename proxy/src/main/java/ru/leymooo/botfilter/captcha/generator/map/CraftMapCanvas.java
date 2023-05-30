@@ -3,7 +3,7 @@ package ru.leymooo.botfilter.captcha.generator.map;
 import java.awt.image.BufferedImage;
 import java.util.Arrays; 
 import javax.imageio.ImageIO;
-import java.xml.bind.DatatypeConverter;
+import javax.*;
 import javax.xml.bind.DatatypeConverter;
 import ru.leymooo.botfilter.packets.MapDataPacket;
 import java.io.ByteArrayInputStream;
