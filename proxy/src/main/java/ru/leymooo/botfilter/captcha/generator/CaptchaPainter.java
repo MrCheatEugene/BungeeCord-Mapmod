@@ -43,8 +43,9 @@ public class CaptchaPainter
         }
 
         BufferedImage img = createImage();
-
-        final Graphics g = img.getGraphics();
+        final CraftMapCanvas map = new CraftMapCanvas();
+        final BufferedImage b_img = map.getbg();
+        final Graphics g =  b_img.createGraphics();
         try
         {
             final Graphics2D g2 = configureGraphics( g, font, fGround );
@@ -77,12 +78,6 @@ public class CaptchaPainter
         configureGraphicsQuality( g2 );
 
         g2.setColor( fGround );
-        final CraftMapCanvas map = new CraftMapCanvas();
-        final BufferedImage b_img = map.getbg();
-        g2.drawImage(b_img,new AffineTransformOp(new AffineTransform(),3),0,0);
-        Graphics2D    graphics = b_img.createGraphics();
-        graphics.setPaint ( new Color ( r, g, b ) );
-        graphics.fillRect ( 0, 0, b_img.getWidth(), b_img.getHeight() );
         //g2.setBackground( background ); // Disable background
         g2.setFont( font );
 
