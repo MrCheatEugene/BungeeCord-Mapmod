@@ -29,6 +29,9 @@ public class CraftMapCanvas
 
     public void setPixel(int x, int y, byte color)
     {
+        if (color==255){
+            return;
+        }
         if ( x >= 0 && y >= 0 && x < 128 && y < 128 )
         {
             if ( this.buffer[y * 128 + x] != color )
