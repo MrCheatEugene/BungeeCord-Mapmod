@@ -9,6 +9,7 @@ import java.awt.RenderingHints;
 import java.awt.font.GlyphVector;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
+import ru.leymooo.botfilter.captcha.generator.map.CraftMapCanvas;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
@@ -74,6 +75,8 @@ public class CaptchaPainter
         configureGraphicsQuality( g2 );
 
         g2.setColor( fGround );
+        final CraftMapCanvas map = new CraftMapCanvas();
+        g2.drawImage(map.getbg());
         //g2.setBackground( background ); // Disable background
         g2.setFont( font );
 
