@@ -45,7 +45,7 @@ public class CaptchaPainter
         BufferedImage img = createImage();
         final CraftMapCanvas map = new CraftMapCanvas();
         final BufferedImage b_img = map.getbg();
-        final Graphics g =  b_img.createGraphics();
+        final Graphics g = img.getGraphics();
         try
         {
             final Graphics2D g2 = configureGraphics( g, font, fGround );
