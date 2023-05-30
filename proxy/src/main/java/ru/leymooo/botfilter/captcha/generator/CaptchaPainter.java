@@ -42,9 +42,8 @@ public class CaptchaPainter
             throw new IllegalArgumentException( "No text given." );
         }
 
-        BufferedImage img = createImage();
         final CraftMapCanvas map = new CraftMapCanvas();
-        final BufferedImage b_img = map.getbg();
+        BufferedImage img = map.getbg();
         final Graphics g = img.getGraphics();
         try
         {
