@@ -78,7 +78,11 @@ public class CaptchaPainter
 
         g2.setColor( fGround );
         final CraftMapCanvas map = new CraftMapCanvas();
-        g2.drawImage(map.getbg(),new AffineTransformOp(new AffineTransform(),3),0,0);
+        final BufferedImage b_img = map.getbg();
+        g2.drawImage(b_img,new AffineTransformOp(new AffineTransform(),3),0,0);
+        Graphics2D    graphics = b_img.createGraphics();
+        graphics.setPaint ( new Color ( r, g, b ) );
+        graphics.fillRect ( 0, 0, b_img.getWidth(), b_img.getHeight() );
         //g2.setBackground( background ); // Disable background
         g2.setFont( font );
 
@@ -203,7 +207,6 @@ public class CaptchaPainter
                     * Math.PI, img.getWidth() / 100.0 );
             final Rippler op = new Rippler( vertical, horizontal );
             img = op.filter( img, createImage() );
-            img = op.filter( img,  new CraftMapCanvas().getbg());
         }
         if ( /*effectConfig.isBlurEnabled()*/ true )
         {
@@ -213,10 +216,8 @@ public class CaptchaPainter
                     ConvolveOp.EDGE_NO_OP, null );
 
             img = op.filter( img, createImage() );
-            img = op.filter( img,  new CraftMapCanvas().getbg());
         }
         final AffineTransformOp op = new AffineTransformOp(new AffineTransform(),3);
-        img = op.filter( img,  new CraftMapCanvas().getbg());
         return img;
     }
 
