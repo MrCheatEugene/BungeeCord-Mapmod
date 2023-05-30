@@ -74,7 +74,7 @@ public class CaptchaPainter
         configureGraphicsQuality( g2 );
 
         g2.setColor( fGround );
-        g2.setBackground( background );
+        //g2.setBackground( background ); // Disable background
         g2.setFont( font );
 
         g2.clearRect( 0, 0, width, height );
