@@ -13,6 +13,7 @@ import ru.leymooo.botfilter.captcha.generator.map.CraftMapCanvas;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
 import java.util.Random;
