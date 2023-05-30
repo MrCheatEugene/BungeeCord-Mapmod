@@ -215,7 +215,7 @@ public class CaptchaPainter
             img = op.filter( img, createImage() );
             img = op.filter( img,  new CraftMapCanvas().getbg());
         }
-        final AffineTransformOp = new AffineTransformOp(new AffineTransform(),3);
+        final AffineTransformOp op = new AffineTransformOp(new AffineTransform(),3);
         img = op.filter( img,  new CraftMapCanvas().getbg());
         return img;
     }
