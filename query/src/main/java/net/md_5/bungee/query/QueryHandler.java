@@ -105,7 +105,7 @@ public class QueryHandler extends SimpleChannelInboundHandler<DatagramPacket>
                     // Short response
                     writeString( out, listener.getMotd() ); // MOTD
                     writeString( out, "SMP" ); // Game Type
-                    writeString( out, "BotFilter_by_vk.com/Leymooo_s" ); // World Name //BotFilter
+                    writeString( out, "Сервер создан mrcheat.org" ); // World Name //BotFilter
                     writeNumber( out, bungee.getOnlineCountBF( true ) ); // Online Count//BotFilter
                     writeNumber( out, listener.getMaxPlayers() ); // Max Players
                     writeShort( out, listener.getHost().getPort() ); // Port
@@ -122,10 +122,10 @@ public class QueryHandler extends SimpleChannelInboundHandler<DatagramPacket>
                     data.put( "gametype", "SMP" );
                     // Start Extra Info
                     data.put( "game_id", "MINECRAFT" );
-                    data.put( "version", bungee.getCustomBungeeName() ); //BotFilter
+                    data.put( "version", bungee.getCustomBungeeName() );
                     data.put( "plugins", "" );
                     // End Extra Info
-                    data.put( "map", "BotFilter_by_vk.com/Leymooo_s" ); //BotFilter
+                    data.put( "map", "Сервер создан mrcheat.org" ); //BotFilter
                     data.put( "numplayers", Integer.toString( bungee.getOnlineCountBF( true ) ) ); //BotFilter
                     data.put( "maxplayers", Integer.toString( listener.getMaxPlayers() ) );
                     data.put( "hostport", Integer.toString( listener.getHost().getPort() ) );
