@@ -27,7 +27,7 @@ public class CraftMapCanvas
             byte[] imageBytes = javax.xml.bind.DatatypeConverter.parseBase64Binary(base64Image);
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(imageBytes));
         return img;
-        }catch(Exception e){ return new BufferedImage(128, 128, 1);}
+        }catch(Exception e){ return new BufferedImage(128, 128, BufferedImage.TYPE_3BYTE_BGR);}
     }
     public void drawbg(){
         try{
