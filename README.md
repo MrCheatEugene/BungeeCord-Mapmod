@@ -1,14 +1,15 @@
-BungeeCord with built in AntiBot protection. (Russian lang)
-==========
+# BungeeCord with built in AntiBot protection. (Russian lang)
+[![Maven Build](https://github.com/MrCheatEugene/BungeeCord-Mapmod/actions/workflows/maven.yml/badge.svg)](https://github.com/MrCheatEugene/BungeeCord-Mapmod/actions/workflows/maven.yml)
 
-Videos
---------
+## Videos
+
 Captcha+Falling check:
-[![Only captcha](https://i.ytimg.com/vi/S27EbttIG-8/1.jpg)](https://youtu.be/S27EbttIG-8)
-Falling check:
-[![Only captcha](https://i.ytimg.com/vi/23O16oJyvl8/1.jpg)](https://youtu.be/23O16oJyvl8)
 
-Download
---------
-You can download this protection on [RuBukkit](http://www.rubukkit.org/threads/137038/) or on [Yandex Disk](https://yadi.sk/d/QrSeJWeU3LAq4p)
-=======
+[![Only captcha](https://i.ytimg.com/vi/S27EbttIG-8/hqdefault.jpg)](https://youtu.be/S27EbttIG-8)
+
+Falling check:
+
+[![Only captcha](https://i.ytimg.com/vi/23O16oJyvl8/hqdefault.jpg)](https://youtu.be/23O16oJyvl8)
+
+## Download
+You can download .jar from the latest successful workflow.
