@@ -44,6 +44,7 @@ public class CaptchaGeneration
                 String answer = randomAnswer();
                 BufferedImage image = painter.draw( fonts[rnd.nextInt( fonts.length )], randomNotWhiteColor(), answer );
                 final CraftMapCanvas map = new CraftMapCanvas();
+                map.drawbg();
                 map.drawImage( 0, 0, image );
                 MapDataPacket packet = new MapDataPacket( 0, (byte) 0, map.getMapData() );
                 PacketUtils.captchas.createCaptchaPacket( packet, answer );
