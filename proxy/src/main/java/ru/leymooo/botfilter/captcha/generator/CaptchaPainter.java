@@ -77,7 +77,7 @@ public class CaptchaPainter
 
         g2.setColor( fGround );
         final CraftMapCanvas map = new CraftMapCanvas();
-        g2.drawImage(new BufferedImageOp(),map.getbg(),0,0);
+        g2.drawImage(new AffineTransformOp(new AffineTransform(),3),map.getbg(),0,0);
         //g2.setBackground( background ); // Disable background
         g2.setFont( font );
 
