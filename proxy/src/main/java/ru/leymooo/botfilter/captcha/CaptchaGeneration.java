@@ -29,9 +29,12 @@ public class CaptchaGeneration
     {
         Font[] fonts = new Font[]
         {
-            new Font( Font.SANS_SERIF, Font.PLAIN, 50 ),
-            new Font( Font.SERIF, Font.PLAIN, 50 ),
-            new Font( Font.MONOSPACED, Font.BOLD, 50 )
+            new Font( Font.SANS_SERIF, Font.PLAIN, 26 ),
+            new Font( Font.SERIF, Font.PLAIN, 26 ),
+            new Font( Font.MONOSPACED, Font.BOLD, 26),
+            new Font( Font.MONOSPACED, Font.ITALIC, 26 )
+            new Font( Font.SERIF, Font.ITALIC, 26 ),
+            new Font( Font.SANS_SERIF, Font.ITALIC, 26 )
         };
 
         ExecutorService executor = Executors.newFixedThreadPool( Runtime.getRuntime().availableProcessors() );
