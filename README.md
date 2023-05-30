@@ -1,4 +1,4 @@
-# BungeeCord with built in AntiBot protection. (Russian lang)
+# BotFilter, but with an image in the background!
 [![Maven Build](https://github.com/MrCheatEugene/BungeeCord-Mapmod/actions/workflows/maven.yml/badge.svg)](https://github.com/MrCheatEugene/BungeeCord-Mapmod/actions/workflows/maven.yml)
 
 ## Videos
