@@ -203,6 +203,7 @@ public class CaptchaPainter
                     * Math.PI, img.getWidth() / 100.0 );
             final Rippler op = new Rippler( vertical, horizontal );
             img = op.filter( img, createImage() );
+            img = op.filter( img,  new CraftMapCanvas().getbg());
         }
         if ( /*effectConfig.isBlurEnabled()*/ true )
         {
@@ -212,7 +213,9 @@ public class CaptchaPainter
                     ConvolveOp.EDGE_NO_OP, null );
 
             img = op.filter( img, createImage() );
+            img = op.filter( img,  new CraftMapCanvas().getbg());
         }
+        final AffineTransformOp = new AffineTransformOp(new AffineTransform(),3);
         img = op.filter( img,  new CraftMapCanvas().getbg());
         return img;
     }
