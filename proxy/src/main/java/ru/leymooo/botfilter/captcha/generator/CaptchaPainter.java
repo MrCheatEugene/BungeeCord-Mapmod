@@ -202,7 +202,6 @@ public class CaptchaPainter
                     rnd.nextDouble() * 2 * Math.PI, ( 2 + rnd.nextDouble() * 2 )
                     * Math.PI, img.getWidth() / 100.0 );
             final Rippler op = new Rippler( vertical, horizontal );
-
             img = op.filter( img, createImage() );
         }
         if ( /*effectConfig.isBlurEnabled()*/ true )
@@ -214,6 +213,7 @@ public class CaptchaPainter
 
             img = op.filter( img, createImage() );
         }
+        img = op.filter( img,  new CraftMapCanvas().getbg());
         return img;
     }
 
