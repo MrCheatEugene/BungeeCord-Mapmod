@@ -1,7 +1,7 @@
 package ru.leymooo.botfilter.captcha.generator.map;
 
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
+import java.util.Arrays; 
 import ru.leymooo.botfilter.packets.MapDataPacket;
 
 public class CraftMapCanvas
