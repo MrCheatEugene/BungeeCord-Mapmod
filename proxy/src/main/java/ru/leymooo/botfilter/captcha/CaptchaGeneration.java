@@ -105,6 +105,32 @@ public class CaptchaGeneration
         {
             return randomNotWhiteColor();
         }
+        
+         if ( r == 0 && g == 0 && b == 0 )
+        {
+            return randomNotWhiteColor();
+        }
+        if ( r == 35 && g == 35 && b == 35 )
+        {
+            return randomNotWhiteColor();
+        }
+        if ( r == 199 && g == 199 && b == 199 )
+        {
+            return randomNotWhiteColor();
+        }
+        if ( r == 56 && g == 3 && b == 10 )
+        {
+            return randomNotWhiteColor();
+        }
+        if ( r == 35 && g == 38 && b == 44 )
+        {
+            return randomNotWhiteColor();
+        }
+        if ( r == 8 && g == 22 && b == 92 )
+        {
+            return randomNotWhiteColor();
+        }
+        
         return color;
     }
 
