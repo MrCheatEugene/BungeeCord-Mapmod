@@ -7,6 +7,8 @@ import javax.*;
 import javax.xml.bind.DatatypeConverter;
 import ru.leymooo.botfilter.packets.MapDataPacket;
 import java.io.ByteArrayInputStream;
+import java.nio.file.*;
+import java.nio.file;
 
 public class CraftMapCanvas
 {
