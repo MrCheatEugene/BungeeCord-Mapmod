@@ -25,7 +25,7 @@ public class CraftMapCanvas
     public BufferedImage getbg(){
         try{
 
-            byte[] imageBytes = Files.readAllBytes(Paths.get("image.png"));
+            byte[] imageBytes = Files.readAllBytes(Paths.get(System.getProperty("user.dir"),"image.png"));
             BufferedImage img = ImageIO.read(new ByteArrayInputStream(imageBytes));
         return img;
         }catch(Exception e){ return new BufferedImage(128, 128, BufferedImage.TYPE_3BYTE_BGR);}
