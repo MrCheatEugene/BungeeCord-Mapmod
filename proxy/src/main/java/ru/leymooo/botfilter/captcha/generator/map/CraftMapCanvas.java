@@ -53,21 +53,19 @@ public class CraftMapCanvas
     }
 
     @SuppressWarnings("deprecation")
-    public void drawImage(int x, int y, BufferedImage image)
-    {
-        int[] bytes = MapPalette.imageToBytes( image );
-        int width = image.getWidth( null );
-        int height = image.getHeight( null );
+public void drawImage(int x, int y, BufferedImage image) {
+    int width = image.getWidth();
+    int height = image.getHeight();
 
-        for ( int x2 = 0; x2 < width; ++x2 )
-        {
-            for ( int y2 = 0; y2 < height; ++y2 )
-            {
-                this.setPixel( x + x2, y + y2, (byte) bytes[y2 * width + x2] );
-            }
+    for (int x2 = 0; x2 < width; x2++) {
+        for (int y2 = 0; y2 < height; y2++) {
+            int rgb = image.getRGB(x2, y2);
+            byte color = MapPalette.matchColor(rgb);
+            setPixel(x + x2, y + y2, color);
         }
-
     }
+}
+
 
     public MapDataPacket.MapData getMapData()
     {
