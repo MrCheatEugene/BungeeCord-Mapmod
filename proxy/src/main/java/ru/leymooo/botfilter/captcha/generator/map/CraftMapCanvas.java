@@ -13,14 +13,6 @@ import java.nio.file.*;
 
 public class CraftMapCanvas
 {
-
-    public static BufferedImage convertTo3ByteBGR(BufferedImage originalImage) {
-        BufferedImage convertedImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(),
-                BufferedImage.TYPE_3BYTE_BGR);
-        convertedImage.getGraphics().drawImage(originalImage, 0, 0, null);
-        return convertedImage;
-    }
-    
     private static final ThreadLocal<byte[]> mcPixelsBuffer = ThreadLocal.withInitial( () -> new byte[128 * 128] );
     private final byte[] buffer;
 
@@ -33,7 +25,7 @@ public class CraftMapCanvas
     public BufferedImage getbg(){
         try{
             byte[] imageBytes = Files.readAllBytes(Paths.get(System.getProperty("user.dir"),"image.bmp"));
-            BufferedImage img = convertTo3ByteBGR(ImageIO.read(new ByteArrayInputStream(imageBytes)));
+            BufferedImage img = ImageIO.read(new ByteArrayInputStream(imageBytes));
         return img;
         }catch(Exception e){ return new BufferedImage(128, 128, BufferedImage.TYPE_3BYTE_BGR);}
     }
@@ -42,7 +34,7 @@ public class CraftMapCanvas
             drawImage(0, 0, getbg());
         }catch(Exception e){}
     }
-    public void setPixel(int x, int y, byte color)
+public void setPixel(int x, int y, byte color)
     {
         if ( x >= 0 && y >= 0 && x < 128 && y < 128 )
         {
@@ -52,23 +44,23 @@ public class CraftMapCanvas
             }
         }
     }
-
-@SuppressWarnings("deprecation")
-public void drawImage(int x, int y, BufferedImage image) {
-    int width = image.getWidth();
-    int height = image.getHeight();
-
-    for (int x2 = 0; x2 < width; x2++) {
-        for (int y2 = 0; y2 < height; y2++) {
-            Color color = new Color(image.getRGB(x2, y2));
-            byte mcColor = MapPalette.matchColor(color);
-            setPixel(x + x2, y + y2, mcColor);
-        }
     }
-}
+    @SuppressWarnings("deprecation")
+    public void drawImage(int x, int y, BufferedImage image)
+    {
+        int[] bytes = MapPalette.imageToBytes( image );
+        int width = image.getWidth( null );
+        int height = image.getHeight( null );
 
+        for ( int x2 = 0; x2 < width; ++x2 )
+        {
+            for ( int y2 = 0; y2 < height; ++y2 )
+            {
+                this.setPixel( x + x2, y + y2, (byte) bytes[y2 * width + x2] );
+            }
+        }
 
-
+    }
 
     public MapDataPacket.MapData getMapData()
     {
