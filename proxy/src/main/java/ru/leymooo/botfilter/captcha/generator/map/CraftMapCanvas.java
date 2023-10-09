@@ -44,7 +44,7 @@ public void setPixel(int x, int y, byte color)
             }
         }
     }
-    }
+
     @SuppressWarnings("deprecation")
     public void drawImage(int x, int y, BufferedImage image)
     {
