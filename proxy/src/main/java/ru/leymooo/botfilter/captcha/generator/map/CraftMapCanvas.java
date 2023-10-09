@@ -12,7 +12,13 @@ import java.nio.file.*;
 public class CraftMapCanvas
 {
 
-
+    public static BufferedImage convertTo3ByteBGR(BufferedImage originalImage) {
+        BufferedImage convertedImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(),
+                BufferedImage.TYPE_3BYTE_BGR);
+        convertedImage.getGraphics().drawImage(originalImage, 0, 0, null);
+        return convertedImage;
+    }
+    
     private static final ThreadLocal<byte[]> mcPixelsBuffer = ThreadLocal.withInitial( () -> new byte[128 * 128] );
     private final byte[] buffer;
 
@@ -26,7 +32,7 @@ public class CraftMapCanvas
         try{
 
             byte[] imageBytes = Files.readAllBytes(Paths.get(System.getProperty("user.dir"),"image.png"));
-            BufferedImage img = ImageIO.read(new ByteArrayInputStream(imageBytes));
+            BufferedImage img = convertTo3ByteBGR(ImageIO.read(new ByteArrayInputStream(imageBytes)));
         return img;
         }catch(Exception e){ return new BufferedImage(128, 128, BufferedImage.TYPE_3BYTE_BGR);}
     }
