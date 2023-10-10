@@ -11,6 +11,7 @@ import javax.xml.bind.DatatypeConverter;
 import ru.leymooo.botfilter.packets.MapDataPacket;
 import java.io.ByteArrayInputStream;
 import java.nio.file.*;
+import java.io.File;
 
 public class CraftMapCanvas
 {
@@ -25,7 +26,7 @@ public class CraftMapCanvas
     }
     public BufferedImage getbg(){
         try{
-            String imageBytes = Paths.get(System.getProperty("user.dir"),"image.jpg").toAbsolutePath().toString();
+            File imageBytes = new File(System.getProperty("user.dir"),"image.jpg");
             BufferedImage in = ImageIO.read(imageBytes);
             
             BufferedImage newImage = new BufferedImage(
